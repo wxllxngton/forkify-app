@@ -1,0 +1,63 @@
+.search-results {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  margin-top: auto;
+  padding: 0 3.5rem;
+  position: relative; /* Add position relative to the container */
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  &__btn {
+    &--prev {
+      float: left;
+    }
+
+    &--next {
+      float: right;
+    }
+  }
+
+  &__pages {
+    position: absolute; /* Position the pages container absolutely */
+    left: 50%; /* Move it to the center horizontally */
+    transform: translateX(-50%); /* Center align it exactly */
+    bottom: 0.5rem; /* Raise the container by 1rem (adjust the value as needed) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Remove left and right margin */
+  }
+
+  span {
+    color: $color-primary;
+    font-size: 1.3rem;
+    font-weight: 600;
+    align-items: center;
+    transition: all 0.2s;
+  }
+}
+
+.copyright {
+  color: $color-grey-dark-2;
+  font-size: 1.2rem;
+  padding: 0 3.5rem;
+  margin-top: 4rem;
+
+  .twitter-link:link,
+  .twitter-link:visited {
+    color: $color-grey-dark-2;
+  }
+}
