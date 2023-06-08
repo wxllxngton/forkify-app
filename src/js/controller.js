@@ -16,9 +16,9 @@ import shoppingCartView from './views/shoppingCartView.js';
 ///////////////////////////////////////
 
 // Not from JS But from Parcel
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const controlRecipes = async function () {
   try {
