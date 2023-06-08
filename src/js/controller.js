@@ -1,4 +1,4 @@
-// import 'core.js';
+import 'core.js';
 import 'regenerator-runtime/runtime'; // Polyfilling async await
 import * as model from './model.js';
 import { MODAL_CLOSE_SEC } from './config.js';
@@ -16,9 +16,9 @@ import shoppingCartView from './views/shoppingCartView.js';
 ///////////////////////////////////////
 
 // Not from JS But from Parcel
-// if (module.hot) {
-//   module.hot.accept();
-// }
+if (module.hot) {
+  module.hot.accept();
+}
 
 const controlRecipes = async function () {
   try {
