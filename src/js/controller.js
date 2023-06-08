@@ -1,4 +1,4 @@
-import 'core.js';
+// import 'core.js';
 import 'regenerator-runtime/runtime'; // Polyfilling async await
 import * as model from './model.js';
 import { MODAL_CLOSE_SEC } from './config.js';
