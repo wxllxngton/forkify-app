@@ -1,6 +1,7 @@
 {
   "name": "forkify",
   "version": "1.0.0",
+  "main": "index.js",
   "description": "Recipe application",
   "scripts": {
     "start": "parcel index.html",
