@@ -1,9 +1,9 @@
 # forkify
 
-forkify is an online recipe application that uses the forkify API and allows users to search for recipes, create their own recipes, bookmark recipes, and update ingredient measurements based on the number of servings.
+Users of the forkify online recipe application can search for recipes, make their own recipes, bookmark recipes, change ingredient measurements based on the number of servings, and add ingredients to a shopping cart for later use. forkify uses the forkify API.
 
 # Built With
-[![Built With](https://skillicons.dev/icons?i=js,html,css,sass,babel,parcel)](https://skillicons.dev)
+[![Built With](https://skillicons.dev/icons?i=js,html,css,sass,babel)](https://skillicons.dev)
 
 Uses Model View Controller (MVC) Architecture
 
@@ -81,6 +81,7 @@ Uses Model View Controller (MVC) Architecture
 3. As a user, I want to **bookmark recipes**, so that I can review them later.
 4. As a user, I want to be able to **create my own recipes**, so that I have them all organized in the same app.
 5. As a user, I want to be able to **see my bookmarks and own recipes when I leave the app and come back later**, so that I can close the app safely afer cooking.
+6. As a user, I want to be able to **add ingredients to a shopping cart for later use.** 
 
 # Features
 
@@ -98,15 +99,20 @@ Uses Model View Controller (MVC) Architecture
 
    - _Bookmark functionality:_ display list of all bookmarked recipes
 
-4. **Create my own recipes**
+4. **Create my own recipes:**
 
-   - User can uplaod own recipes
+   - User can upload own recipes
    - User recipes will automatically be bookmarked
    - User can only see their own recipes, not recipes from other users
 
-5. **See my bookmarks and own recipes when I leave the app and come back**
+5. **See my bookmarks and own recipes when I leave the app and come back:**
+   
    - Store bookmark data in the browser using _local storage_
    - On page load, read saved bookmarks from local storage and display
+
+6. **Add ingredients to a shopping cart for later use:**
+   
+   - User can add ingredients for the recipe to a shopping cart.
 
 # License
 
