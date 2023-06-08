@@ -1,4 +1,4 @@
-# forkify Web Application
+# forkify
 
 forkify is an online recipe application that uses the forkify API and allows users to search for recipes, create their own recipes, bookmark recipes, and update ingredient measurements based on the number of servings.
 
@@ -41,7 +41,7 @@ Uses Model View Controller (MVC) Architecture
 
 # Project Architecture
 
-![Project Architecture](./src/img/projectDiagrams/forkify-architecture-recipe-loading.png)
+![Project Architecture](./src/plans/forkify-architecture-recipe-loading.png)
 
 # Flowchart - Part 1
 
@@ -51,7 +51,7 @@ Uses Model View Controller (MVC) Architecture
 2. Results with pagination
 3. Display recipe
 
-![Flow Chart (part 1)](./src/img/projectDiagrams/forkify-flowchart-part-1.png)
+![Flow Chart (part 1)](./src/plans/forkify-flowchart-part-1.png)
 
 # Flowchart - Part 2
 
@@ -62,7 +62,7 @@ Uses Model View Controller (MVC) Architecture
 6. Store bookmark data in the browser
 7. On page load, read saved bookmarks
 
-![Flow Chart (part 2)](./src/img/projectDiagrams/forkify-flowchart-part-2.png)
+![Flow Chart (part 2)](./src/plans/forkify-flowchart-part-2.png)
 
 # Flowchart - Part 3
 
@@ -72,7 +72,7 @@ Uses Model View Controller (MVC) Architecture
 9. Own recipe automatically bookmarked
 10. User can only see own recipes, not from others
 
-![Flow Chart (part 3)](./src/img/projectDiagrams/forkify-flowchart-part-3.png)
+![Flow Chart (part 3)](./src/plans/forkify-flowchart-part-3.png)
 
 # User Stories
 
