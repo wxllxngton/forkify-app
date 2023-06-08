@@ -1,2 +1,2 @@
 # forkify-app
-This is a recipe app created in a Udemy course - "my complete javascript Course" by Jonas Schmedtmann .
+This is a recipe app created in a Udemy course `My Complete JavaScript Course` by Jonas Schmedtmann .
