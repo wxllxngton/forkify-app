@@ -6,11 +6,11 @@ class ResultsView extends PreviewView {
   _errorMessage = 'No recipes found for your query! Please try again!';
   _sortBtn = document.querySelector('.nav__btn--sort');
 
-  // _addHandlerSort(handler) {
-  //   this._sortBtn.addEventListener('click', function (e) {
-  //     handler();
-  //   });
-  // }
+  _addHandlerSort(handler) {
+    this._sortBtn.addEventListener('click', function (e) {
+      handler();
+    });
+  }
 }
 
 export default new ResultsView();

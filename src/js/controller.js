@@ -1,4 +1,4 @@
-import 'core.js';
+// import 'core.js';
 import 'regenerator-runtime/runtime'; // Polyfilling async await
 import * as model from './model.js';
 import { MODAL_CLOSE_SEC } from './config.js';
@@ -145,32 +145,38 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-// const controlSort = function () {
-//   try {
-//     resultsView.renderSpinner();
+const controlSort = async function () {
+  try {
+    // 1) Show loading spinner
+    resultsView.renderSpinner();
 
-//     if (!model.state.search.results) return;
+    // 2) Load search results
+    await model.loadSearchResultsSort();
 
-//     const sortedResults = model.state.search.results.sort(
-//       (a, b) => a.cooking_time - b.cooking_time
-//     );
+    // 3) Check if all recipes have cookingTime property
+    const hasValidCookingTimes = model.state.search.results.every(
+      result => result.cookingTime !== undefined
+    );
 
-//     // 3) Render results
-//     console.log(sortedResults);
-//     // resultsView.render(model.state.search.results);
-//     resultsView.render(sortedResults);
+    if (!hasValidCookingTimes) {
+      throw new Error('Some recipes have missing or undefined cooking times.');
+    }
 
-//     // 4) Render initial pagination buttons
-//     paginationView.render(model.state.search);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+    // 4) Sort the search results by cooking_time
+    model.state.search.results.sort((a, b) => a.cookingTime - b.cookingTime);
+
+    // 5) Render results
+    resultsView.render(model.getSearchResultsPage());
+
+    // 6) Render initial pagination buttons
+    paginationView.render(model.state.search);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const controlShoppingCart = function () {
   try {
-    console.log(model.state.recipe);
-
     // Render recipe
     shoppingCartView.render(model.state.recipe);
   } catch (err) {
@@ -179,7 +185,7 @@ const controlShoppingCart = function () {
 };
 
 const init = function () {
-  // resultsView._addHandlerSort(controlSort);
+  resultsView._addHandlerSort(controlSort);
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);

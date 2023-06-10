@@ -67,10 +67,34 @@ export const loadSearchResults = async function (query) {
         title: rec.title,
         publisher: rec.publisher,
         image: rec.image_url,
-        // cookingTime: rec.cooking_time,
         ...(rec.key && { key: rec.key }),
       };
     });
+    state.search.page = 1;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+export const loadSearchResultsSort = async function () {
+  try {
+    state.search.results = await Promise.all(
+      state.search.results.slice(0, 5).map(async rec => {
+        const data = await AJAX(`${API_URL}${rec.id}?key=${KEY}`);
+        console.log(data);
+        const cooking_time = data.data.recipe.cooking_time;
+        return {
+          id: rec.id,
+          title: rec.title,
+          publisher: rec.publisher,
+          image: rec.image_url,
+          cookingTime: cooking_time,
+          ...(rec.key && { key: rec.key }),
+        };
+      })
+    );
+    console.log(state.search.results);
     state.search.page = 1;
   } catch (err) {
     console.error(err);
